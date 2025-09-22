@@ -1,0 +1,33 @@
+meta {
+  name: Create product
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/api/products
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: admin
+  password: admin123
+}
+
+body:json {
+  {
+    "name": "Keyboard",
+    "description": "Mech",
+    "price": 49.99,
+    "quantity": 50
+  }
+}
+
+settings {
+  encodeUrl: false
+}

@@ -1,0 +1,33 @@
+meta {
+  name: Add sale
+  type: http
+  seq: 9
+}
+
+post {
+  url: http://localhost:8080/api/sales
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: admin
+  password: admin123
+}
+
+body:json {
+  {
+    "productId": 1,
+    "quantity": 1,
+    "salePrice": 900.00,
+    "saleDate": "2025-09-21T10:00:00"
+  }
+}
+
+settings {
+  encodeUrl: false
+}

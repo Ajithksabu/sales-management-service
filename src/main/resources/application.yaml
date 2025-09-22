@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/productdb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.format_sql: true
+    open-in-view: false
+  thymeleaf:
+    cache: false
+
+server:
+  port: 8080
+
+# IP allowlist for filter
+security:
+  allowed-ips: 127.0.0.1,::1,0:0:0:0:0:0:0:1,172.17.0.0/16,10.0.0.0/8,192.168.0.0/16
+
+logging:
+  level:
+    root: INFO
+    com.project.salesmanagement: DEBUG

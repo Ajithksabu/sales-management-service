@@ -1,0 +1,33 @@
+meta {
+  name: Update product
+  type: http
+  seq: 7
+}
+
+put {
+  url: http://localhost:8080/api/products/3
+  body: json
+  auth: basic
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:basic {
+  username: admin
+  password: admin123
+}
+
+body:json {
+  {
+    "name": "Keyboard",
+    "description": "RGB",
+    "price": 59.99,
+    "quantity": 60
+  }
+}
+
+settings {
+  encodeUrl: false
+}
